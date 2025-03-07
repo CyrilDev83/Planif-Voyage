@@ -1,0 +1,53 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+html,
+body {
+  height: 100%;
+}
+
+.nav {
+  height: 5em;
+  width: 100%;
+  background-color: #a1cad9;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.calendrier {
+  height: 5em;
+  width: 100%;
+  background-color: #b9b9b9;
+}
+.principal {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.fiches {
+  width: 40%;
+  background-color: rgb(206, 222, 26);
+  flex: 1;
+}
+
+.map {
+  width: 40%;
+  background-color: rgb(62, 222, 26);
+  flex: 1;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  height: 5em;
+
+  width: 100%;
+}
