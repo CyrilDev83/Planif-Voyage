@@ -1,9 +1,16 @@
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
+
 html,
 body {
+  height: 100%; /* S'assurer que le body et le HTML prennent toute la hauteur */
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* 3 lignes : nav, contenu principal, footer */
   height: 100%;
 }
 
@@ -12,35 +19,29 @@ body {
   width: 100%;
   background-color: #a1cad9;
 }
-main {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
 
 .calendrier {
   height: 5em;
   width: 100%;
   background-color: #b9b9b9;
 }
+
 .principal {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%; /* 2 colonnes pour les fiches et la carte */
   width: 100%;
+  /* gap: 1rem; Espace entre les colonnes */
+  flex-grow: 1; /* Permet à cette section de prendre l'espace restant */
 }
 
 .fiches {
-  width: 40%;
   background-color: rgb(206, 222, 26);
-  flex: 1;
+  height: 100%;
 }
 
 .map {
-  width: 40%;
   background-color: rgb(62, 222, 26);
-  flex: 1;
+  height: 100%;
 }
 
 footer {
@@ -48,6 +49,5 @@ footer {
   color: white;
   text-align: center;
   height: 5em;
-
   width: 100%;
 }
