@@ -14,34 +14,10 @@ body {
   height: 100%;
 }
 
-.nav {
+nav {
   height: 5em;
   width: 100%;
   background-color: #a1cad9;
-}
-
-.calendrier {
-  height: 5em;
-  width: 100%;
-  background-color: #b9b9b9;
-}
-
-.principal {
-  display: grid;
-  grid-template-columns: 40% 60%; /* 2 colonnes pour les fiches et la carte */
-  width: 100%;
-  /* gap: 1rem; Espace entre les colonnes */
-  flex-grow: 1; /* Permet à cette section de prendre l'espace restant */
-}
-
-.fiches {
-  background-color: rgb(206, 222, 26);
-  height: 100%;
-}
-
-.map {
-  background-color: rgb(62, 222, 26);
-  height: 100%;
 }
 
 footer {
@@ -51,3 +27,40 @@ footer {
   height: 5em;
   width: 100%;
 }
+main {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: 3fr;
+}
+.calendrier {
+    grid-area: calendrier;
+  /* height: 10em; */
+  width: 100%;
+  background-color: #b9b9b9;
+}
+
+.principal {
+    display: grid; 
+    grid-template-columns: 40% 60%; 
+    grid-template-rows: 0.3fr 2fr 0.7fr; 
+    /* gap: 5px 5px;  */
+    grid-template-areas: 
+      "documents map"
+      "fiches map"
+      "calendrier calendrier";
+}
+.documents {
+    grid-area: documents;
+}
+.fiches {
+    grid-area: fiches;
+  background-color: rgb(206, 222, 26);
+  height: 100%;
+}
+
+.map {
+    grid-area: map;
+  background-color: rgb(62, 222, 26);
+  height: 100%;
+}
+
