@@ -5,18 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Outil de planification de voyages</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
     <script src="./app.js"></script>
   </head>
   <body>
-    <nav class="nav">nav</nav>
+    <nav class="nav">
+        <div class="menu" id="home">
+
+            <i class="fa-solid fa-house"></i>Accueil
+        </div>
+        <div class="menu">
+            <a href="https://www.skyscanner.fr/">Trouver un Vol</a>
+            
+        </div>
+        <div class="menu">
+            Trouver un hotel
+        </div>
+        <div class="menu">
+            Trouver un restaurant
+        </div>
+        <div class="menu">
+            Location de Voiture
+        </div>
+        <div class="menu">
+            Trouver une activité
+        </div>
+    </nav>
 
     <main>
-        <section class="principal">
-            <div class="documents">documents</div>
-            <div class="fiches">fiches</div>
-            <div class="map">place pour la map</div>
-            <section class="calendrier">calendrier</section>
-        </section>
+      <section class="principal">
+        <div class="titre">TITRE DU VOYAGE</div>
+
+        <div class="documents">
+          <div class="outils">
+            <i class="fa-solid fa-folder-open"></i> Document
+          </div>
+          <div class="outils">
+            <i class="fa-solid fa-map-location"></i> Itineraire
+          </div>
+          <div class="outils">
+            <i class="fa-solid fa-square-check"></i> ToDo
+          </div>
+          <div class="outils">
+            <i class="fa-solid fa-sack-dollar"></i> Budget
+          </div>
+        </div>
+        <div class="fiches">fiches</div>
+        <div class="map">place pour la map</div>
+        <section class="calendrier">calendrier</section>
+      </section>
     </main>
     <footer class="footer"></footer>
   </body>

@@ -18,6 +18,24 @@ nav {
   height: 5em;
   width: 100%;
   background-color: #a1cad9;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.menu {
+    border: solid black 1px;
+    border-radius: 1em;
+    height: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.menu a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: black;
+    font-weight: bold;
 }
 
 footer {
@@ -28,39 +46,71 @@ footer {
   width: 100%;
 }
 main {
-    display: grid;
-    grid-template-columns: 2fr;
-    grid-template-rows: 3fr;
-}
-.calendrier {
-    grid-area: calendrier;
-  /* height: 10em; */
-  width: 100%;
-  background-color: #b9b9b9;
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-template-rows: 3fr;
 }
 
 .principal {
-    display: grid; 
-    grid-template-columns: 40% 60%; 
-    grid-template-rows: 0.3fr 2fr 0.7fr; 
-    /* gap: 5px 5px;  */
-    grid-template-areas: 
-      "documents map"
-      "fiches map"
-      "calendrier calendrier";
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 0.3fr 0.3fr 2fr 0.7fr;
+  /* gap: 5px 5px;  */
+  grid-template-areas:
+    "titre titre"
+    "documents map"
+    "fiches map"
+    "calendrier calendrier";
+}
+
+.titre {
+  grid-area: titre;
+  background-image: url(./ressources/beach-2528635_1280.jpg);
+  background-size: cover; /* Ajuste la taille */
+  background-position: center; /* Centre l’image */
+  background-repeat: no-repeat; /* Empêche la répétition */
+  color: white;
+  font-size: larger;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .documents {
-    grid-area: documents;
+  grid-area: documents;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+.outils {
+  width: 4em;
+  height: 4em;
+  border: solid black 1px;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.outils i {
+  font-size: 2em;
+}
+
 .fiches {
-    grid-area: fiches;
+  grid-area: fiches;
   background-color: rgb(206, 222, 26);
   height: 100%;
 }
 
 .map {
-    grid-area: map;
+  grid-area: map;
   background-color: rgb(62, 222, 26);
   height: 100%;
 }
 
+.calendrier {
+  grid-area: calendrier;
+  /* height: 10em; */
+  width: 100%;
+  background-color: #b9b9b9;
+}
