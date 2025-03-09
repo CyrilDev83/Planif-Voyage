@@ -5,11 +5,16 @@ function newFiche() {
   newFiche.id = `${idFiche}`;
 
   const sectionFiches = document.querySelector(".fiches");
-  newFiche.innerHTML = "<h1>hello je suis une new fiche</h1>"; // nom de la fiche
-  newFiche.innerHTML =
-    '<button onclick="supprimerFiche(this)">Supprimer</button>'; // bouton supprimer
 
+  const titreFiche = document.createElement("h3");
+  titreFiche.innerText = ` ${idFiche} titre de la nouvelle fiche`; // nom de la fiche
+  const boutonSupprimer = document.createElement("button");
+  boutonSupprimer.setAttribute("onclick", "supprimerFiche(this)"); // bouton supprimer
+  boutonSupprimer.innerText = "X";
   sectionFiches.appendChild(newFiche); // ajout de la fiche
+
+  newFiche.appendChild(titreFiche);
+  newFiche.appendChild(boutonSupprimer);
 
   console.log(newFiche.id);
   idFiche++;
@@ -17,4 +22,14 @@ function newFiche() {
 
 function supprimerFiche(bouton) {
   bouton.parentNode.remove();
+}
+
+function formulaireNouvelleFiche() {
+  const modal = document.getElementById("modal");
+  modal.showModal();
+  modal.classList.add("modal")
+  document
+    .getElementById("closeModal")
+    .addEventListener("click", () => modal.close());
+    
 }
