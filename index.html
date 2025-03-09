@@ -5,33 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Outil de planification de voyages</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
 
-    <script src="./app.js"></script>
+    <script src="./app.js" defer></script>
   </head>
   <body>
     <nav class="nav">
-        <div class="menu" id="home">
-
-            <i class="fa-solid fa-house"></i>Accueil
-        </div>
-        <div class="menu">
-            <a href="https://www.skyscanner.fr/">Trouver un Vol</a>
-            
-        </div>
-        <div class="menu">
-            Trouver un hotel
-        </div>
-        <div class="menu">
-            Trouver un restaurant
-        </div>
-        <div class="menu">
-            Location de Voiture
-        </div>
-        <div class="menu">
-            Trouver une activité
-        </div>
+      <div class="menu" id="home">
+        <i class="fa-solid fa-house"></i>
+        <a href="./index.html">Accueil</a>
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-plane"></i>
+        <a href="https://www.skyscanner.fr/" target="_blank">Vol</a>
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-bed"></i>
+        <a href="https://www.skyscanner.fr/" target="_blank">Hebergement</a>
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-utensils"></i>
+        <a href="https://www.skyscanner.fr/" target="_blank">restaurant</a>
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-car"></i>
+        <a href="https://www.skyscanner.fr/" target="_blank">Voiture</a>
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-star"></i>
+        <a href="https://www.skyscanner.fr/" target="_blank">A voir</a>
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-person-walking"></i>
+        <a href="https://www.skyscanner.fr/" target="_blank">Activité</a>
+      </div>
     </nav>
 
     <main>
@@ -52,7 +62,13 @@
             <i class="fa-solid fa-sack-dollar"></i> Budget
           </div>
         </div>
-        <div class="fiches">fiches</div>
+        <section class="fiches">
+          <h1>A Faire</h1>
+          <button class="bouton-nouvelle-fiche" onclick = newFiche()>
+            nouveau
+          </button>
+          <!-- Code Ajouter par la fonction newFiche -->
+        </section>
         <div class="map">place pour la map</div>
         <section class="calendrier">calendrier</section>
       </section>
