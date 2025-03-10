@@ -1,8 +1,12 @@
 let idFiche = 0;
 function newFiche() {
+  
+  // récuperation des data du formulaire
+  const dataFiche = recupDataFormulaire()
+  
+  // création de la fiche
   const sectionFiches = document.querySelector(".fiches");
   const newFiche = document.createElement("article");
-
   newFiche.classList.add("fiche");
   newFiche.id = `${idFiche}`;
   newFiche.setAttribute("onclick", "toggleFiche(this)");
@@ -10,10 +14,10 @@ function newFiche() {
   const contenuFiche = document.createElement("div");
   contenuFiche.classList.add("contenu-fiche");
   const titreFiche = document.createElement("h3");
-  titreFiche.innerText = ` ${idFiche} titre de la nouvelle fiche`; // nom de la fiche
+  titreFiche.innerText = ` ${idFiche} ${dataFiche.titreFiche}`; // nom de la fiche
   const detail = document.createElement("p");
   detail.classList.add("detail");
-  detail.innerText = "je suis un détail";
+  detail.innerText = `${dataFiche.detail}`;
   sectionFiches.appendChild(newFiche); // ajout de la fiche
 
   // bouton supprimer
@@ -21,6 +25,7 @@ function newFiche() {
   boutonSupprimer.setAttribute("onclick", "supprimerFiche(this)"); // bouton supprimer
   boutonSupprimer.innerText = "X";
   boutonSupprimer.id = "boutonSupprimer";
+
 
   // insertion des elements
   contenuFiche.appendChild(titreFiche);
@@ -47,4 +52,13 @@ function formulaireNouvelleFiche() {
 
 function toggleFiche(element) {
   element.classList.toggle("ouverte"); // Ajoute ou enlève la classe "ouverte"
+}
+function recupDataFormulaire () {
+  const titreFiche = document.getElementById("titre-fiche").value
+  const detail = document.getElementById("detail").value
+  const typeFiche = document.getElementById("type-de-fiche").value
+  const duree = document.getElementById("duree").value
+  const dataFiche = {typeFiche, titreFiche, detail, duree}
+  console.log(dataFiche)
+  return dataFiche
 }
