@@ -1,11 +1,13 @@
 * {
   padding: 0;
   margin: 0;
+  
 }
 
 html,
 body {
   height: 100%; /* S'assurer que le body et le HTML prennent toute la hauteur */
+  
 }
 
 body {
@@ -107,11 +109,39 @@ main {
 }
 
 .fiche {
-  width: 80%;
+  width: 450px;
   height: 50px;
-  border: solid black 1px;
+  /* border: solid black 1px;
   border-radius: 10px;
-  background-color: #d1d0d0;
+  background-color: #d1d0d0; */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fiche .detail{
+  display: none;
+}
+
+.fiche.ouverte {
+  width: 450px;
+  height: 150px;
+
+}
+
+.fiche.ouverte .detail{
+  display: block;
+}
+
+.contenu-fiche {
+  width: 390px;
+  background-color: yellow
+  
+}
+.contenu-fiche h3 {
+justify-self: center;
 }
 
 .map {
@@ -147,3 +177,26 @@ main {
   text-align: center;
   animation: fadeIn 0.3s ease-in-out;
 }
+#boutonSupprimer {
+  background-color: #ff0202; /* Bleu */
+  color: white; /* Texte blanc */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer;
+  height: 50px;
+  display: none;
+  
+
+}
+#boutonSupprimer:hover {
+  background-color: #ff0202; /* Bleu plus foncé */
+  transform: scale(1.05); /* Légère agrandissement */
+  transition: 0.3s;
+}
+
+.fiche:hover #boutonSupprimer {
+  display: block;
+}
+
