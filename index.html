@@ -64,18 +64,25 @@
         </div>
         <section class="fiches">
           <h1>A Faire</h1>
-          <button class="bouton-nouvelle-fiche" onclick = newFiche()>
-            nouveau
-          </button>
-          <button id="openModal" onclick= formulaireNouvelleFiche()>Ouvrir le formulaire</button>
+      
+   
+          <button  class="bouton" id="openModal" onclick= formulaireNouvelleFiche()>Nouvelle Fiche</button>
 
 <dialog id="modal">
-  <form method="dialog">
-    <h2>Formulaire</h2>
-    <label>Nom: <input type="text" name="nom"></label>
-    <label>Email: <input type="email" name="email"></label>
-    <button type="submit">Envoyer</button>
-    <button id="closeModal">Fermer</button>
+  <form class="formulaire-fiche" method="dialog">
+    <h3>Nouvelle fiche</h3>
+    <label>Titre <input id="titre-fiche" type="text" name="nom"></label>
+    <label for="type-de-fiche"> type de fiche </label>
+    <select id="type-de-fiche" name="type-de-fiche">
+      <option value="endroit">Endroit</option>
+      <option value="transport">Transport</option>
+      <option value="activite">Activité</option>
+    </select>
+    <label>Details <input id="detail" type="text" name="detail"></label>
+    <label>Durée en heure<input id="duree" type="number" name="duree"></label>
+
+    <button class="bouton-formulaire" type="submit" onclick = newFiche()>Envoyer</button>
+    <button class="bouton-formulaire"id="closeModal" >Fermer</button>
   </form>
 </dialog>
 
