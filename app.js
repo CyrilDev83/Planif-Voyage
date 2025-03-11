@@ -1,5 +1,7 @@
 
 
+
+
 let idFiche = 0;
 let voyage = []
 
@@ -65,5 +67,13 @@ function formulaireNouvelleFiche() {
 function toggleFiche(element) {
   element.classList.toggle("ouverte"); // Ajoute ou enlève la classe "ouverte"
 }
-
+function recupDataFormulaire () {
+  const titreFiche = document.getElementById("titre-fiche").value
+  const detail = document.getElementById("detail").value
+  const typeFiche = document.getElementById("type-de-fiche").value
+  const duree = document.getElementById("duree").value
+  const dataFiche = {typeFiche, titreFiche, detail, duree}
+  console.log(dataFiche)
+  return dataFiche
+}
 
