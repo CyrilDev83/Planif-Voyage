@@ -1,4 +1,9 @@
+
+
 let idFiche = 0;
+let voyage = []
+
+
 function newFiche() {
   
   // récuperation des data du formulaire
@@ -33,12 +38,24 @@ function newFiche() {
   newFiche.appendChild(contenuFiche);
   newFiche.appendChild(boutonSupprimer);
 
-  console.log(newFiche.id);
+ 
+
   idFiche++;
+  ajouterFiche(dataFiche)
 }
 
+// function d'ajout de la fiche au tableau voyage
+function ajouterFiche(nouvelleFiche) {
+  voyage.push(nouvelleFiche)
+  console.log(voyage)
+
+}
+
+// fonction de suppression de la fiche par le bouton et aussi du tableau voyage
 function supprimerFiche(bouton) {
   bouton.parentNode.remove();
+  voyage.splice(bouton.parentNode, 1)
+  console.log(voyage)
 }
 
 function formulaireNouvelleFiche() {
@@ -62,3 +79,4 @@ function recupDataFormulaire () {
   console.log(dataFiche)
   return dataFiche
 }
+
