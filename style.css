@@ -109,7 +109,7 @@ main {
 }
 
 .fiche {
-  width: 450px;
+  width: 600px;
   height: 50px;
   /* border: solid black 1px;
   border-radius: 10px;
@@ -126,7 +126,7 @@ main {
 }
 
 .fiche.ouverte {
-  width: 450px;
+  width: 500px;
   height: 150px;
 
 }
@@ -136,7 +136,7 @@ main {
 }
 
 .contenu-fiche {
-  width: 390px;
+  width: 500px;
   background-color: yellow
   
 }
@@ -177,26 +177,30 @@ justify-self: center;
   text-align: center;
   animation: fadeIn 0.3s ease-in-out;
 }
-#boutonSupprimer {
-  background-color: #ff0202; /* Bleu */
+.bouton-cache {
+  background-color: #ff0202;
   color: white; /* Texte blanc */
   border: none;
-  padding: 10px 20px;
+  padding: 10px;
   font-size: 16px;
   border-radius: 5px; /* Coins arrondis */
   cursor: pointer;
   height: 50px;
+  width: 50px;
   display: none;
   
 
 }
-#boutonSupprimer:hover {
-  background-color: #ff0202; /* Bleu plus foncé */
+.bouton-cache:hover {
+  background-color: #ff0202;
   transform: scale(1.05); /* Légère agrandissement */
   transition: 0.3s;
 }
+#btn-modifier {
+  background-color: grey;
+}
 
-.fiche:hover #boutonSupprimer {
+.fiche:hover .bouton-cache {
   display: block;
 }
 
@@ -253,7 +257,7 @@ input, textarea, select {
   background-color: #0056b3;
 }
 .bouton{
-  width: 50%;
+  width: 500px;
   padding: 10px;
   background-color: #007bff;
   color: white;
