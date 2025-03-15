@@ -98,7 +98,7 @@ main {
   font-size: 2em;
 }
 
-.fiches {
+.voyage {
   grid-area: fiches;
   background-color: rgb(108, 173, 230);
   height: 100%;
@@ -269,4 +269,21 @@ input, textarea, select {
 
 .bouton:hover {
   background-color: #0056b3;
+}
+
+.jours {
+  width: 500px;
+  height:fit-content;
+  background-color: #a1cad9;
+
+}
+.bouton-fiche {
+  width: 50px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }

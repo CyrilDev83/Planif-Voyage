@@ -1,12 +1,28 @@
-let idFiche = 0;
+let idFiche = 1;
+let numeroJour = 1
 let voyage = [];
+
+const sectionFiches = document.querySelector(".voyage");
+
+// Ajouter un nouveau jour
+
+function nouveauJour() {
+  const jour = document.createElement("section")
+  sectionFiches.appendChild(jour)
+  jour.classList.add("jours")
+  jour.id = numeroJour
+jour.innerHTML = `<h3>jour ${numeroJour}</h3>
+<button  class="bouton-fiche" id="openModal" onclick= formulaireNouvelleFiche(this)>Add</button>`
+numeroJour++
+
+}
+
 
 function newFiche() {
   // récuperation des data du formulaire
   const dataFiche = recupDataFormulaire();
 
   // création de la fiche
-  const sectionFiches = document.querySelector(".fiches");
   const newFiche = document.createElement("article");
   newFiche.classList.add("fiche");
   newFiche.id = `${idFiche}`;
@@ -46,61 +62,23 @@ function newFiche() {
   boutonModifier.classList.add("bouton-cache");
   boutonModifier.id = "btn-modifier";
 
+ 
   // insertion des elements
-  contenuFiche.appendChild(titreFiche);
-  contenuFiche.appendChild(detail);
-  contenuFiche.appendChild(duree);
-  newFiche.appendChild(contenuFiche);
-  newFiche.appendChild(boutonModifier);
-  newFiche.appendChild(boutonSupprimer);
+  contenuFiche.append(titreFiche, detail, duree);
+  newFiche.append(contenuFiche, boutonModifier, boutonSupprimer);
 
-  idFiche++;
-  ajouterFiche(dataFiche);
-
-  // Gestion du Drag and drop
-
-  voyage.forEach((fiche) => {
-    newFiche.addEventListener("dragstart", (e) => {
-      e.dataTransfer.setData("text/plain", newFiche.dataset.id);
-      newFiche.classList.add("dragging");
-    });
-  });
-
-  newFiche.addEventListener("dragend", () => {
-    newFiche.classList.remove("dragging");
-  });
-
-  sectionFiches.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    const dragging = document.querySelector(".dragging");
-    const afterElement = getDragAfterElement(sectionFiches, e.clientY);
-    if (afterElement == null) {
-      sectionFiches.appendChild(dragging);
-    } else {
-      sectionFiches.insertBefore(dragging, afterElement);
-    }
-  });
-
+   // Récupère le jour cible depuis le dataset du modal
+   const modal = document.getElementById("modal");
+   const jourIndex = parseInt(modal.dataset.jourId);
+   const jours = document.querySelectorAll(".jours");
+   const jourCible = jours[jourIndex];
+ 
+   jourCible.appendChild(newFiche);
+   idFiche++;
+   ajouterFiche(dataFiche);
 }
 
-function getDragAfterElement(sectionFiches, y) {
-  const draggableElements = [
-    ...sectionFiches.querySelectorAll(".fiche:not(.dragging)"),
-  ];
-
-  return draggableElements.reduce(
-    (closest, child) => {
-      const box = child.getBoundingClientRect();
-      const offset = y - box.top - box.height / 2;
-      if (offset < 0 && offset > closest.offset) {
-        return { offset, element: child };
-      } else {
-        return closest;
-      }
-    },
-    { offset: Number.NEGATIVE_INFINITY }
-  ).element;
-}
+ 
 // function d'ajout de la fiche au tableau voyage
 function ajouterFiche(nouvelleFiche) {
   voyage.push(nouvelleFiche);
@@ -114,13 +92,15 @@ function supprimerFiche(bouton) {
   console.log(voyage);
 }
 
-function formulaireNouvelleFiche() {
+// fonction d'envoie du formulaire et création de la fiche
+function formulaireNouvelleFiche(bouton) {
   const modal = document.getElementById("modal");
   modal.showModal();
 
-  document
-    .getElementById("closeModal")
-    .addEventListener("click", () => modal.close());
+  const jour = bouton.closest(".jours");
+  modal.dataset.jourId = Array.from(document.querySelectorAll(".jours")).indexOf(jour);
+
+  document.getElementById("closeModal").addEventListener("click", () => modal.close());
 }
 
 function toggleFiche(element) {
@@ -148,3 +128,5 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var marker = L.marker([48.8566, 2.3522]).addTo(map)
     .bindPopup('Hello, Paris !')
     .openPopup();
+    
+
