@@ -116,17 +116,17 @@ function recupDataFormulaire() {
   return dataFiche;
 }
 
-// Initialise la carte et centre sur une position (ex: Paris)
-var map = L.map('map').setView([48.8566, 2.3522], 13);
+// // Initialise la carte et centre sur une position (ex: Paris)
+// var map = L.map('map').setView([48.8566, 2.3522], 13);
 
-// Ajoute une couche de tuiles (fond de carte)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-}).addTo(map);
+// // Ajoute une couche de tuiles (fond de carte)
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '© OpenStreetMap contributors'
+// }).addTo(map);
 
-// Ajoute un marqueur interactif
-var marker = L.marker([48.8566, 2.3522]).addTo(map)
-    .bindPopup('Hello, Paris !')
-    .openPopup();
+// // Ajoute un marqueur interactif
+// var marker = L.marker([48.8566, 2.3522]).addTo(map)
+//     .bindPopup('Hello, Paris !')
+//     .openPopup();
     
 

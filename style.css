@@ -204,6 +204,7 @@ justify-self: center;
   display: block;
 }
 
+
 dialog {
   width: 500px;
   padding: 20px;
@@ -287,3 +288,4 @@ input, textarea, select {
   cursor: pointer;
   font-size: 16px;
 }
+
